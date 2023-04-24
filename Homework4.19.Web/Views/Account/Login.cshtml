@@ -1,0 +1,20 @@
+﻿@model AdViewModel
+<div class="row" style="min-height: 80vh; display:flex; align-items: center;">
+
+    <div class="col-md-6 offset-md-3 bg-light p-4 rounded shadow">
+        <h1>Login!</h1>
+        <form method="post" action="/account/login">
+            @if (!string.IsNullOrEmpty(Model.Error))
+            {
+                <div class="alert-danger">@Model.Error</div>
+                <br />
+            }
+            <input type="text" class="form-control" name="email" placeholder="Email" />
+            <br />
+            <input type="password" class="form-control" name="password" placeholder="Password" />
+            <br />
+            <button class="btn btn-primary w-100 btn-lg">Login</button>
+            <a href="/account/signup">Don't have an account? Sign up here!</a>
+        </form>
+    </div>
+</div>

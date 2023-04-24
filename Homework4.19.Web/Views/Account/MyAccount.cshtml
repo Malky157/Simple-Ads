@@ -1,0 +1,17 @@
+﻿@model AdViewModel
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        @foreach (var ad in Model.Ads)
+        {
+            <div class="bg-light p-4 rounded shadow mb-3">
+                <h5>Listed on @ad.DatePosted.ToShortDateString()</h5>                
+                <h3>Details:</h3>
+                <p>@ad.Description</p>
+                <form method="post" action="/account/deletead">
+                    <input type="hidden" name="id" value="@ad.Id"/>
+                    <button class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+        }
+    </div>
+</div>
